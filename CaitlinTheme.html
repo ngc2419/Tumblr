@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head> 
+    <!--
+        Caitlin theme for tumblr by Susan Delaney
+    	http://caitlin-theme.tumblr.com
+  		v1.0 | 2012.04.04
+  	-->
+<!-- DEFAULT VARIABLES -->
+
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<meta name="image:Background" content=""/>
+<meta name="color:Background" content="#ffffff" />
+
+<meta name="font:Title" content="verdana,arial,helvetica" />
+<meta name="color:Title" content="ff6f00" />
+
+<meta name="font:Body" content="geneva,arial,helvetica" />
+<meta name="color:Body" content="#666666" />
+
+<meta name="font:Description" content="geneva,arial,helvetica" />
+<meta name="color:Description" content="#666666" />
+
+<meta name="color:Links" content="#ff6f00"/>
+<meta name="color:Hover" content="#ededed"/>
+
+<meta name="if:Endless Scrolling" content="1" />
+<meta name="if:Show Following" content="0" />
+<meta name="if:Hide Captions" content="0" />
+<meta name="if:Hide Tags" content="0" />
+<meta name="if:Rounded Borders" content="0" />
+<meta name="if:Justify Description" content="0" />
+
+<meta name="text:Google Analytics Code" content="" />
+
+<!-- Custom links -->
+<meta name="text:CustomLink1" content="/tagged/about" /> 
+<meta name="text:CustomLink1Text" content="about" /> 
+<meta name="text:CustomLink2" content="" /> 
+<meta name="text:CustomLink2Text" content="" /> 
+<meta name="text:CustomLink3" content="" /> 
+<meta name="text:CustomLink3Text" content="" /> 
+<meta name="text:CustomLink4" content="" /> 
+<meta name="text:CustomLink4Text" content="" /> 
+<meta name="text:CustomLink5" content="" /> 
+<meta name="text:CustomLink5Text" content="" /> 
+<meta name="text:CustomLink6" content="" /> 
+<meta name="text:CustomLink6Text" content="" /> 
+
+<!-- JS for floating to-top button -->
+<script type="text/javascript" src="http://static.tumblr.com/xjea7fn/vHMm1zi3c/jquery.ui.totop.js"></script>
+
+<!-- JS for infinte scrolling -->
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+<style type="text/css">
+
+/* Layout */
+body {
+background: {color:Background} url('{image:Background}') top left fixed repeat;
+color:{color:Body};
+font-family:{font:Body};
+font-size:9pt;
+text-align:justify;
+line-height:17px;
+}
+
+.title {
+color:{color:Title};
+font-family:{font:Title};
+font-size:16pt;
+margin-top:5px;
+margin-bottom:5px;
+font-style:normal;
+font-weight:normal;
+text-align:justify;
+}
+
+.subtitle {
+color:{color:title};
+font-family:{font:Body};
+font-size:10pt;
+margin-top:5px;
+margin-bottom:5px;
+font-style:normal;
+font-weight:normal;
+text-align:justify;
+}
+
+a {
+color: {color:links};
+text-decoration:none;
+font-style:normal;
+}
+
+a:hover {
+color: #ededed;
+-webkit-transition: 0.4s;
+-moz-transition: 0.4s;
+-o-transition: 0.4s;
+transition: 0.4s;
+}
+
+.linkbox {
+color:#cccccc;
+font-size:8pt;
+width:400px;
+height:auto;
+margin-bottom:20px;
+padding-top:6px;
+background:none;
+}
+
+a.linkbox {
+padding-right:5px;
+}
+
+a.linkbox:hover {
+color:#ededed;
+-webkit-transition: 0.4s;
+-moz-transition: 0.4s;
+-o-transition: 0.4s;
+transition: 0.4s;
+}
+
+h1 {
+font:10pt {font:body};
+color:191919;
+}
+
+.desc {
+width:400px;
+margin-bottom:10px;
+font-family:{font:Description};
+font-size:9pt;
+font-style:italic;
+color:{color:description};
+{block:IfJustifyDescription}
+text-align:justify;
+{/block:IfJustifyDescription}
+{block:IfNotJustifyDescription}
+text-align:center;
+{/block:IfNotJustifyDescription}
+}
+
+#entry {
+margin-top:10px;
+width:400px;
+background:none;
+text-align:justify;
+margin-bottom:3px;
+}
+
+img {
+opacity:1;
+{block:IfRoundedBorders}
+border-radius:30px;
+{/block:IfRoundedBorders}
+-webkit-transition: 0.4s;
+-moz-transition: 0.4s;
+-o-transition: 0.4s;
+transition: 0.4s;
+}
+
+a:hover img {
+{block:IfRoundedBorders}
+border-radius:30px;
+{/block:IfRoundedBorders}
+opacity:0.7;
+-webkit-transition: 0.4s;
+-moz-transition: 0.4s;
+-o-transition: 0.4s;
+transition: 0.4s;
+}
+
+#perma {
+text-transform:uppercase;
+color: {color:links};
+opacity:1;
+font:7pt {font:body};
+z-index:1;
+display:block;
+text-align:center;
+}
+
+div.video embed,
+div.post div.video object {
+width:400px
+}
+
+.audio {
+width: 373px;
+background:#ffffff;
+border:1px solid #888888;
+border-radius:12px;
+padding-left:25px;
+}
+
+b, strong{
+color:#2f2f2f;
+}
+
+blockquote {
+border-left:2px solid #e0e0e0;
+padding-left:5px;
+margin-left:0px;
+}
+
+blockquote img {
+max-width:100%;
+display:block;
+border-left: 0px solid #e0e0e0;
+}
+
+.tags {
+font:8pt {font:body};
+}
+
+.notes {
+    text-align:justify;
+list-style-type: none;
+}
+
+
+{CustomCSS} 
+</style>
+</head>
+
+<body>
+<center>
+
+<div id="linkbox">
+<a href="/" class="title">{Title}</a><br>
+<a href="/" class="linkbox">home</a>
+<a href="/archive" class="linkbox">archive</a>
+{block:IfCustomLink1}
+<a href="{text:CustomLink1}" class="linkbox">{text:CustomLink1Text}</a>
+{/block:IfCustomLink1}
+{block:IfCustomLink2}
+<a href="{text:CustomLink2}" class="linkbox">{text:CustomLink2Text}</a>
+{/block:IfCustomLink2}
+{block:IfCustomLink3}
+<a href="{text:CustomLink3}" class="linkbox">{text:CustomLink3Text}</a>
+{/block:IfCustomLink3}
+{block:IfCustomLink4}
+<a href="{text:CustomLink4}" class="linkbox">{text:CustomLink4Text}</a>
+{/block:IfCustomLink4}
+{block:IfCustomLink5}
+<a href="{text:CustomLink5}" class="linkbox">{text:CustomLink5Text}</a>
+{/block:IfCustomLink5}
+{block:IfCustomLink6}
+<a href="{text:CustomLink6}" class="linkbox">{text:CustomLink6Text}</a>
+{/block:IfCustomLink6}
+<a href="http://caitlin-theme.tumblr.com/" class="linkbox">theme</a>
+{block:HasPages}{block:Pages}<a href="{URL}" class="linkbox">{Label}</a>{block:Pages}{/block:HasPages}
+{block:AskEnabled}<a href="/ask" class="linkbox">{AskLabel}</a>{/block:AskEnabled} 
+{block:SubmissionsEnabled}<a href="/submit" class="linkbox">{SubmitLabel}</a>{/block:SubmissionsEnabled} 
+<p>{block:Description}<div class="desc">{Description}</div>{/block:Description}
+</div>
+
+<div>
+{block:IfEndlessScrolling}<div class="autopagerize_page_element">{/block:IfEndlessScrolling}
+
+{block:Posts}
+<div id="entry">
+<br>
+{block:Text}
+{block:Title}<div class="subtitle">{Title}</div>{/block:Title}{Body}
+{/block:Text}
+
+{block:Photo}
+{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+{block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
+<img src="{block:IndexPage}{PhotoURL-400}{/block:IndexPage}{block:PermalinkPage}{PhotoURL-400}{/block:PermalinkPage}" alt="{PhotoAlt}" width="400px"/>
+{block:IndexPage}</a>
+{/block:IndexPage}
+{LinkCloseTag}
+{/block:Photo}
+
+{block:Photoset}
+{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+{block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
+<img src="{block:IndexPage}{Photoset-250}{/block:IndexPage}{block:PermalinkPage}{Photoset-250}{/block:PermalinkPage}" width="400px"/>
+{block:IndexPage}</a>
+{/block:IndexPage}
+{LinkCloseTag}
+{/block:Photoset}
+
+{block:Quote}
+<i>{Quote}</i> &nbsp;{block:Source}&mdash;{Source}{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<div class="subtitle"><a href="{URL}" {Target}>{Name}</a></div>{block:Description}{Description}{/block:Description}
+{/block:Link}
+
+{block:Chat}
+{block:Title}{Title}{/block:Title}
+<div style="border-top:1px solid #888888;">{block:Lines}<div class="line {Alt}">{block:Label}<div style="border-bottom:1px solid #888888;border-left:1px solid #888888;border-right:1px solid #888888;padding-left:9px;padding-right:9px;padding-bottom:5px;padding-top:5px;"><b>{Label}</b>{/block:Label}<i> {Line}</i></div></div>{/block:Lines}</div>
+{/block:Chat}
+
+{block:Audio}
+{Audio-400}
+<center><div class="audio">{AudioPlayerWhite}</div></center>
+{block:ExternalAudio} &nbsp; | &nbsp; <a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</div>
+{block:PermalinkPage}{/block:PermalinkPage}
+{/block:Audio}
+
+{block:Video}
+{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+{block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
+{Video-400}
+{block:IndexPage}</a>{/block:IndexPage}{LinkCloseTag}
+{/block:Video}
+
+{block:Answer}
+<b>{Question}</b> <font style="color:#000000;font-style:italic;">by {Asker}</font>
+<div style="margin-top:14px;color:#666666;"><i>{Answer}</i></div>
+{/block:Answer}
+
+<!-- Note count, reblog -->
+{block:IndexPage}<div id="perma" style="margin-top:4px;"><a href="{Permalink}">{NoteCountWithLabel}</a> &nbsp; | &nbsp; <a href="{ReblogURL}" target="_blank">Reblog</a></div> {/block:IndexPage}
+
+
+<!-- Captions -->
+{block:IfNotHideCaptions}<br>{Caption}{/block:IfNotHideCaptions}
+{block:PermalinkPage}
+{block:IfHideCaptions}
+{block:Caption}<br>{Caption}{/block:Caption}
+{/block:IfHideCaptions}
+{/block:PermalinkPage}
+
+<!-- Tags  -->
+<div class="tags">
+{block:IfNotHideTags}{block:HasTags}Tags: &nbsp; {block:Tags}<a href="{TagURL}">#{Tag}</a> &nbsp;{/block:Tags}{/block:HasTags}{/block:IfNotHideTags}
+{block:PermalinkPage}
+{block:IfHideTags}{block:HasTags}Tags: &nbsp; {block:Tags}<a href="{TagURL}">{Tag}</a> &nbsp;{/block:Tags}{/block:HasTags}{/block:IfHideTags}
+{/block:PermalinkPage}
+</div>
+
+<!-- Show notes on Permalink page -->
+<center>{block:PostNotes}{PostNotes}{/block:PostNotes}</center>
+
+</div> <!-- end entry -->
+{/block:Posts}
+
+<!-- Google Analytics -->
+{block:IfGoogleAnalyticsCode}
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '{text:Google Analytics Code}']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+{/block:IfGoogleAnalyticsCode}
+
+<!-- endless scrolling -->
+{block:IfEndlessScrolling}</div>{/block:IfEndlessScrolling}
+{block:IfNotEndlessScrolling}
+{block:Pagination}
+<div style="position:fixed;bottom:75px;right:250px;">
+{block:NextPage}<a href="{NextPage}" style="font:20pt georgia;font-weight:bold;">&#8594;</a>{/block:NextPage}
+<br>{block:PreviousPage}<a href="{PreviousPage}" style="font:20pt georgia;font-weight:bold;">&#8592;</a>{/block:PreviousPage}
+</div>
+{/block:Pagination}
+{/block:IfNotEndlessScrolling}
+   
+{block:ifShowFollowing}{block:Following}
+{block:Followed}<a href="{FollowedURL}"><img src="{FollowedPortraitURL-24}"/></a>{/block:Followed}
+{/block:Following}{/block:ifShowFollowing}
+
+</center>
+</div>
+
+</body>
+</html>
